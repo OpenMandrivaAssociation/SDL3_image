@@ -108,3 +108,9 @@ touch NEWS README AUTHORS ChangeLog
 
 %install
 %make_install -C build
+
+# remove unwanted tests files
+rm -f %{buildroot}%{_libexecdir}/installed-tests/SDL3_image/showanim \
+rm -f %{buildroot}%{_libexecdir}/installed-tests/SDL3_image/showclipboard \
+rm -f %{buildroot}%{_libexecdir}/installed-tests/SDL3_image/showgpuimage \
+rm -f %{buildroot}%{_libexecdir}/installed-tests/SDL3_image/showimage
