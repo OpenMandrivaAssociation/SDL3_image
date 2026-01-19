@@ -1,5 +1,4 @@
 %define major 0
-%define api 2.0
 %define libname %mklibname %{name}
 %define devname %mklibname %{name} -d
 
@@ -36,7 +35,7 @@ This package contains the library needed to run programs dynamically
 linked with %{name}.
 
 %files -n %{libname}
-#{_libdir}/lib%{name}-%{api}.so.%{major}*
+%{_libdir}/libSDL3_image.so.%{major}*
 
 #----------------------------------------------------------------------------
 
@@ -52,10 +51,13 @@ applications which will use %{name}.
 
 %files -n %{devname}
 %doc CHANGES.txt
-#{_includedir}/SDL2/*
-#{_libdir}/lib%{name}.so
-#{_libdir}/pkgconfig/SDL2_image.pc
-#{_libdir}/cmake/SDL2_image/
+%license %{_datadir}/licenses/SDL3_image/LICENSE.txt
+%doc %{_mandir}/man3/IMG_*
+%doc %{_mandir}/man3/SDL*
+%{_includedir}/SDL3_image/SDL_image.h
+%{_libdir}/libSDL3_image.so
+%{_libdir}/pkgconfig/sdl3-image.pc
+%{_libdir}/cmake/SDL3_image/
 
 #----------------------------------------------------------------------------
 
@@ -90,8 +92,8 @@ touch NEWS README AUTHORS ChangeLog
   -DSDLIMAGE_SAMPLES_INSTALL=ON \
   -DSDLIMAGE_STRICT=OFF \
   -DSDLIMAGE_SVG=ON \
-  -DSDLIMAGE_TESTS=ON \
-  -DSDLIMAGE_TESTS_INSTALL=ON \
+  -DSDLIMAGE_TESTS=OFF \
+  -DSDLIMAGE_TESTS_INSTALL=OFF \
   -DSDLIMAGE_TGA=ON \
   -DSDLIMAGE_TIF=ON \
   -DSDLIMAGE_TIF_SHARED=ON \
