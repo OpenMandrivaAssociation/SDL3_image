@@ -30,7 +30,6 @@ This library currently supports BMP, PPM, PCX, GIF, JPEG, and PNG formats.
 %package -n %{libname}
 Summary:	Main library for %{name}
 Group:		System/Libraries
-%rename	%{oldlibname}
 
 %description -n %{libname}
 This package contains the library needed to run programs dynamically
