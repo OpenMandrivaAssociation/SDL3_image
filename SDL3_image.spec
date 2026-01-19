@@ -36,7 +36,7 @@ This package contains the library needed to run programs dynamically
 linked with %{name}.
 
 %files -n %{libname}
-%{_libdir}/lib%{name}-%{api}.so.%{major}*
+#{_libdir}/lib%{name}-%{api}.so.%{major}*
 
 #----------------------------------------------------------------------------
 
@@ -52,10 +52,10 @@ applications which will use %{name}.
 
 %files -n %{devname}
 %doc README.txt CHANGES.txt
-%{_includedir}/SDL2/*
-%{_libdir}/lib%{name}.so
-%{_libdir}/pkgconfig/SDL2_image.pc
-%{_libdir}/cmake/SDL2_image/
+#{_includedir}/SDL2/*
+#{_libdir}/lib%{name}.so
+#{_libdir}/pkgconfig/SDL2_image.pc
+#{_libdir}/cmake/SDL2_image/
 
 #----------------------------------------------------------------------------
 
